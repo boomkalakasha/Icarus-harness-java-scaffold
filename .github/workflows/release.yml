@@ -55,7 +55,7 @@ jobs:
           echo "version=$version" >> "$GITHUB_OUTPUT"
 
       - name: Verify dynamic README release facts
-        uses: boomkalakasha/icarus-open-source-governance-skill/actions/release-doc-sync@12999d05ccc73800b5d6c49b709e2f09e8303519
+        uses: boomkalakasha/icarus-open-source-governance-skill/actions/release-doc-sync@4809933a1c60ca19bc70a8140e479eba09da8c37
         with:
           tag: ${{ github.ref_name }}
           version: ${{ steps.release-metadata.outputs.version }}
