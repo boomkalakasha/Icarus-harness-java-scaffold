@@ -51,3 +51,10 @@ Compose 不包含有状态服务，也不要求凭据。发布或部署前请审
 生成时没有声明项目许可证，因此 ZIP 会有意省略 `LICENSE`。公开分发前，应由实际
 权利人决定并记录适用许可证。
 </#if>
+
+## 架构研发 Harness
+
+按需读取[架构地图](docs/architecture.md)与[Harness 说明](docs/harness.md)，
+由[任务记录](harness/task.json)维护完整范围、必要答复和下一步。
+`python harness/verify.py` 做本地前置检查；选用 `--build --record` 执行获授权的
+构建并保存证据，需要 Python 3.10+ 和 Maven。构建成功不等于整个任务或运行验收完成。

@@ -1,6 +1,10 @@
 # Architecture
 
-Icarus AI Spring Scaffold is a small Maven reactor with three deliberately
+The generated engineering environment is described in [Harness](harness.md).
+This document owns generator internals; the generated map owns each downstream
+starting architecture and references, and its task record owns current progress.
+
+Icarus Harness Java Scaffold is a small Maven reactor with three deliberately
 separate modules:
 
 ```text

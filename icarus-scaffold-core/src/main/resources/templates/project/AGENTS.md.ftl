@@ -2,6 +2,19 @@
 
 This project is a small Spring Boot service generated from a public template.
 
+## Architecture optimization loop
+
+Read the relevant [architecture map](docs/architecture.md) and source before
+editing. [harness/task.json](harness/task.json) owns the current goal, allowed
+effects, approved scope, necessary answers and next action. The map owns
+boundaries and references; tests own executable cases. Reuse valid context,
+and re-anchor after scope/source changes or a handoff. Links do not load bodies.
+Run the [local harness](docs/harness.md) for preflight and build evidence.
+An unanswered necessary question blocks dependent changes; continue independent
+work. One path passing is an intermediate result until the full approved scope
+closes. Keep a minimal persistent task record, and scan for reusable methods
+at natural handoffs; record none with a reason when nothing merits promotion.
+
 ## Boundaries
 
 - `domain` owns business types and invariants.
