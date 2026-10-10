@@ -1,8 +1,13 @@
-# Icarus AI Spring Scaffold
+# Icarus Harness Java Scaffold
 
 ![BOOMKALAKASHA 水印](docs/assets/brand/watermark-auto.svg)
 
 [English](README.md) · [架构](docs/architecture.md) · [支持](SUPPORT.md)
+
+**架构研发 Harness：**安全生成 Java 工程，并提供源码/测试引用地图、一份持久任务
+契约和可执行、可留证的验证入口。两种 profile 均包含第一条研发闭环，见
+[Harness 说明](docs/harness.md)。编码执行与调度由宿主负责；仓库更名后原 CLI/REST
+及 Maven 坐标保持兼容。
 
 > **从一句需求，生成一套可审查的服务骨架。**
 >
@@ -13,7 +18,7 @@ Spring Boot 起点，让团队或协作 Agent 直接从可审查、可构建、�
 Scaffold 不内置或托管大模型，也不解释开放式自然语言；当前 Vibe Coding 工具或
 IDEA 插件可以帮助把对话整理为已确认的 CLI 或 REST 请求。
 
-`icarus-ai-spring-scaffold` 是一个安全优先、方便宿主工具接入的
+`Icarus-harness-java-scaffold` 是一个安全优先、方便宿主工具接入的
 Spring Boot 项目生成器。它校验项目坐标，并在内存中生成 ZIP 后返回。生成的
 项目是 Java 17 / Spring Boot 3 应用的可审查起点，不是托管服务，也不承诺任何
 部署环境的可用性。
@@ -21,8 +26,8 @@ Spring Boot 项目生成器。它校验项目坐标，并在内存中生成 ZIP 
 本仓库自身采用 [Apache License 2.0](LICENSE)，并遵循 SemVer。
 <!-- icarus-release-fact: dynamic -->
 公开物料请查看
-[最新 GitHub Release](https://github.com/boomkalakasha/icarus-ai-spring-scaffold/releases/latest)
-和[完整发布记录](https://github.com/boomkalakasha/icarus-ai-spring-scaffold/releases)。
+[最新 GitHub Release](https://github.com/boomkalakasha/Icarus-harness-java-scaffold/releases/latest)
+和[完整发布记录](https://github.com/boomkalakasha/Icarus-harness-java-scaffold/releases)。
 远端发布门禁通过后，已审核标签会提供校验和、SBOM 与构建来源证明。
 
 ## 一眼看懂：它能帮你做什么
@@ -33,6 +38,7 @@ Spring Boot 项目生成器。它校验项目坐标，并在内存中生成 ZIP 
 | 让生成过程更安全 | 坐标约束、路径隔离、ZIP 穿越检查和禁止覆盖 | 更适合交给团队或 Agent 继续演进的可预测制品 |
 | 选择接入方式 | 本地 CLI 与可选 REST 适配器 | 开发者、CI 或可信内部边缘都能调用的入口 |
 | 确认生成项目是否能工作 | package、health、greeting，以及可选 Docker Compose 检查 | 针对样例的真实证据；不可用的检查会明确记为 `NOT_RUN` |
+| 持续优化架构 | 上下文引用、完整范围步骤、必要答复门禁和固定本地构建检查 | 可恢复的研发闭环，源码/构建证据与验收状态分别表达 |
 
 常见场景包括：快速启动一个小型 Spring 服务、为多个协作 Agent 提供一致的
 项目起点，或在技术分享中演示服务结构。它是生成器和可审查的起点，不替代

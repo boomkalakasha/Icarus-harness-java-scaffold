@@ -84,6 +84,33 @@ class ScaffoldGeneratorContractTest {
     }
 
     @Test
+    void bothProfilesIncludeAResolvableEngineeringHarness() throws IOException {
+        for (String profile : List.of("simple", "modular")) {
+            Map<String, byte[]> files = readZip(generator.generate(new ScaffoldRequest(
+                    "demo-service", "com.example", "com.example.demo", 8088, "Harness sample",
+                    null, null, null, "default", profile)));
+            for (String entry : List.of("docs/architecture.md", "docs/harness.md",
+                    "harness/task.json", "harness/verify.py")) {
+                assertTrue(files.containsKey(entry), entry);
+            }
+            String map = new String(files.get("docs/architecture.md"), StandardCharsets.UTF_8);
+            java.util.regex.Matcher links = java.util.regex.Pattern.compile("\\]\\(([^)]+)\\)").matcher(map);
+            int references = 0;
+            while (links.find()) {
+                String target = java.nio.file.Path.of("docs").resolve(links.group(1)).normalize()
+                        .toString().replace('\\', '/');
+                assertTrue(files.containsKey(target), target);
+                references++;
+            }
+            assertTrue(references >= 9);
+            String task = new String(files.get("harness/task.json"), StandardCharsets.UTF_8);
+            assertTrue(task.contains("demo-service"));
+            assertTrue(task.contains("\"status\": \"pending\""));
+            assertTrue(new String(files.get(".gitignore"), StandardCharsets.UTF_8).contains("harness/results/"));
+        }
+    }
+
+    @Test
     void generatesACompilableMultiModuleProjectContract() throws IOException {
         byte[] zip = generator.generate(new ScaffoldRequest(
                 "order-service", "com.example", "com.example.order", 8088, "A safe service"));

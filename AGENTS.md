@@ -1,6 +1,6 @@
 # Repository guidance
 
-This repository is the public source of `icarus-ai-spring-scaffold`, a Java 17
+This repository is the public source of `Icarus-harness-java-scaffold`, a Java 17
 Spring Boot project generator. Treat the public repository as the source of
 truth for reusable functionality; private downstream configuration, customer
 data, deployment credentials and organization-specific automation do not
@@ -63,6 +63,13 @@ make safe. A necessary module guide must be short, link back here, and describe
 only the distinct boundary.
 
 ## Change boundaries
+
+The repository identity is `Icarus-harness-java-scaffold`; published Maven
+coordinates and Java namespaces are retained for compatibility. Generator
+internals are owned by [architecture](docs/architecture.md), generated
+engineering behavior by [harness](docs/harness.md). The verifier must keep
+operation mode, required-answer dependency, confined context, fixed build and
+evidence limitations explicit. It is a cooperative check, not a host sandbox.
 
 Changes that affect generator inputs, ZIP paths, template rendering, CLI
 output, or the optional server must include negative tests for invalid input

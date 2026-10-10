@@ -11,6 +11,16 @@ follow [Semantic Versioning](https://semver.org/).
 
 ### Added
 
+- Renamed the repository to `Icarus-harness-java-scaffold` and converged its
+  positioning on a Java architecture harness. Existing Maven coordinates,
+  Java namespaces, CLI options and REST routes remain compatible.
+- Both profiles now generate an architecture source/test reference map, one
+  durable scope/answer/task record and a standard-library local verifier.
+  Preflight blocks dependent build work while a necessary answer is missing;
+  source/build, runtime, acceptance and release evidence remain distinct.
+- Added append-only local evidence recording with task digest and Git identity;
+  passing a build never automatically marks task steps complete.
+
 - Added a trusted-classpath `TemplatePack` SPI with safe logical
   `TemplateDefinition` paths and an immutable registry; the stock registry
   contains only the bundled `default` pack.

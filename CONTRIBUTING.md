@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping improve Icarus AI Spring Scaffold. Contributions should
+Thanks for helping improve Icarus Harness Java Scaffold. Contributions should
 make the public generator safer, easier to review or more useful without
 introducing private infrastructure or undocumented behavior.
 

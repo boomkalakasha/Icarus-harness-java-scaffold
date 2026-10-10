@@ -78,6 +78,7 @@ public final class TemplateRenderer {
         model.put("packagePath", request.packageName().replace('.', '/'));
         model.put("port", Integer.toString(request.port()));
         model.put("description", request.description());
+        model.put("profile", request.profile());
         model.put("licenseDeclared", request.license() != null);
         model.put("license", request.license());
         model.put("copyrightHolder", request.copyrightHolder());

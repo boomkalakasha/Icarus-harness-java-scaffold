@@ -5,3 +5,5 @@ target/
 .project
 .settings/
 *.log
+harness/results/
+__pycache__/

@@ -8,8 +8,8 @@
     <artifactId>icarus-ai-spring-scaffold</artifactId>
     <version>1.2.0</version>
     <packaging>pom</packaging>
-    <name>Icarus AI Spring Scaffold</name>
-    <description>Security-first Spring Boot project generator</description>
+    <name>Icarus Harness Java Scaffold</name>
+    <description>Java architecture harness with safe project generation, reference maps and bounded verification</description>
 
     <modules>
         <module>icarus-scaffold-core</module>

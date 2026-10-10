@@ -86,14 +86,14 @@ jobs:
           version="${GITHUB_REF_NAME#v}"
           mkdir -p dist
           git archive --format=tar.gz \
-            --prefix="icarus-ai-spring-scaffold-${version}/" \
-            --output="dist/icarus-ai-spring-scaffold-${version}-source.tar.gz" \
+            --prefix="Icarus-harness-java-scaffold-${version}/" \
+            --output="dist/Icarus-harness-java-scaffold-${version}-source.tar.gz" \
             "$GITHUB_REF_NAME"
           cp "icarus-scaffold-core/target/icarus-scaffold-core-${version}.jar" dist/
           cp "icarus-scaffold-cli/target/icarus-scaffold-cli-${version}-all.jar" dist/
           cp "icarus-scaffold-server/target/icarus-scaffold-server-${version}.jar" dist/
           test -s target/bom.json
-          cp target/bom.json "dist/icarus-ai-spring-scaffold-${version}-bom.json"
+          cp target/bom.json "dist/Icarus-harness-java-scaffold-${version}-bom.json"
           (cd dist && sha256sum -- * > SHA256SUMS)
 
       - name: Upload reviewed release assets
@@ -131,4 +131,4 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
-        run: gh release create "$GITHUB_REF_NAME" dist/* --verify-tag --title "Icarus AI Spring Scaffold $GITHUB_REF_NAME" --generate-notes --draft
+        run: gh release create "$GITHUB_REF_NAME" dist/* --verify-tag --title "Icarus Harness Java Scaffold $GITHUB_REF_NAME" --generate-notes --draft

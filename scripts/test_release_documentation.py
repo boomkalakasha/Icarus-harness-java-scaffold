@@ -37,8 +37,8 @@ class ReleaseDocumentationTests(unittest.TestCase):
 
         for source in (english, chinese):
             self.assertIn("<!-- icarus-release-fact: dynamic -->", source)
-            self.assertIn("https://github.com/boomkalakasha/icarus-ai-spring-scaffold/releases/latest", source)
-            self.assertIn("https://github.com/boomkalakasha/icarus-ai-spring-scaffold/releases", source)
+            self.assertIn("https://github.com/boomkalakasha/Icarus-harness-java-scaffold/releases/latest", source)
+            self.assertIn("https://github.com/boomkalakasha/Icarus-harness-java-scaffold/releases", source)
         self.assertNotIn("latest public stable release is", english.lower())
         self.assertNotIn("最新公开稳定版是", chinese)
         self.assertLess(english.index("## What you get"), english.index("## What is here"))

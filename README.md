@@ -1,8 +1,14 @@
-# Icarus AI Spring Scaffold
+# Icarus Harness Java Scaffold
 
 ![BOOMKALAKASHA watermark](docs/assets/brand/watermark-auto.svg)
 
 [中文说明](README.zh-CN.md) · [Architecture](docs/architecture.md) · [Support](SUPPORT.md)
+
+**Architecture harness:** safe Java project generation plus a source/test
+reference map, one durable task contract and runnable, versioned verification.
+Both profiles include the first engineering loop; see [Harness](docs/harness.md).
+The coding host owns implementation and scheduling. Existing CLI/REST and
+Maven coordinates remain compatible after the repository rename.
 
 > **从一句需求，生成一套可审查的服务骨架。**
 >
@@ -15,7 +21,7 @@ not include or host an AI model and does not interpret open-ended natural
 language; a Vibe Coding tool or IDEA plugin may help turn a conversation into
 the confirmed CLI or REST request.
 
-`icarus-ai-spring-scaffold` is a security-focused, host-friendly generator for
+`Icarus-harness-java-scaffold` is a security-focused, host-friendly generator for
 small Spring Boot projects. It validates the project coordinates and writes a
 ZIP archive in memory before returning it. The generated project is intended as
 a reviewable starting point for a Java 17 / Spring Boot 3 application; it is
@@ -24,8 +30,8 @@ not a hosted service or a deployment guarantee.
 The repository itself is released under the [Apache License 2.0](LICENSE).
 <!-- icarus-release-fact: dynamic -->
 Published artifacts are available from the
-[latest GitHub Release](https://github.com/boomkalakasha/icarus-ai-spring-scaffold/releases/latest)
-and the [complete release history](https://github.com/boomkalakasha/icarus-ai-spring-scaffold/releases).
+[latest GitHub Release](https://github.com/boomkalakasha/Icarus-harness-java-scaffold/releases/latest)
+and the [complete release history](https://github.com/boomkalakasha/Icarus-harness-java-scaffold/releases).
 Reviewed tags include checksums, SBOM, and build provenance when their remote
 release gates pass. Versions follow SemVer.
 
@@ -37,6 +43,7 @@ release gates pass. Versions follow SemVer.
 | Keep generation safe | Bounded coordinates, confined paths, ZIP traversal checks and no-overwrite output | A predictable artifact that is safer to hand to a team or Agent |
 | Choose how to integrate it | A local CLI plus an optional REST adapter | A scriptable path for developers, CI jobs or a trusted internal edge |
 | Prove the generated project is usable | Package, health, greeting and optional Docker Compose checks | Evidence about the sample, with unavailable checks reported as `NOT_RUN` |
+| Continue architecture optimization | Context references, approved-scope steps, pending-answer gate and fixed local build verifier | A recoverable engineering loop with source/build evidence kept separate from acceptance |
 
 Typical uses include bootstrapping a small Spring service, creating a consistent
 starting point for several collaborating Agents, or demonstrating a service

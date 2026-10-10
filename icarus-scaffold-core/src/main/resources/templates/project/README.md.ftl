@@ -62,3 +62,11 @@ No project license was declared during generation, so this ZIP intentionally
 contains no `LICENSE`. The downstream rights holder must make and document the
 licensing decision before public distribution.
 </#if>
+
+## Architecture harness
+
+Read [the architecture map](docs/architecture.md) and [the harness guide](docs/harness.md).
+Keep scope and pending answers in [task.json](harness/task.json). Run
+`python harness/verify.py` for preflight; select `--build --record` for authorized
+local build and durable evidence. This requires Python 3.10+ and Maven.
+A local build does not complete the approved task scope or prove runtime acceptance.
